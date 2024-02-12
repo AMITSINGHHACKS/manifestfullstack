@@ -24,7 +24,7 @@ pipeline {
                             sh "git add ."
                             sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
                             withCredentials([gitUsernamePassword(credentialsId: 'git', gitToolName: 'Default')]) {
-                                sh "git push https://github.com/AMITSINGHHACKS/manifests HEAD:main"
+                                sh "git push https://github.com/AMITSINGHHACKS/manifestfullstack HEAD:main"
                             }
                         }
                     }
