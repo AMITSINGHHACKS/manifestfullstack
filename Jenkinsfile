@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        APP_NAME = "azure-web-search"
+        APP_NAME = "devopsfront"
     }
     stages {
         stage('GIT CHECKOUT') {
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                        withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+                        withCredentials([usernamePassword(credentialsId: 'githubcred', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                             //def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')
                             sh "git config --global user.email amitkumar.singh@vsit.edu.in"
                             sh "git config --global user.name AMITSINGHHACKS"

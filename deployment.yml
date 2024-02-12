@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
       - name: devops
-        image: truthaniket/azure-web-search:1.0.0-10
+        image: truthaniket/devopsfront:1.0.0-10
         ports:
-        - containerPort: 6000
+        - containerPort: 3000
 
 ---
 
@@ -28,6 +28,6 @@ spec:
   type: LoadBalancer
   ports:
   - port: 8081
-    targetPort: 6000
+    targetPort: 3000
   selector:
     app: devops
