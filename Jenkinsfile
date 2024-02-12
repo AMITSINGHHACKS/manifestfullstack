@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                        withCredentials([usernamePassword(credentialsId: 'githubcred', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+                        withCredentials([usernamePassword(credentialsId: 'git', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                             //def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')
                             sh "git config --global user.email amitkumar.singh@vsit.edu.in"
                             sh "git config --global user.name AMITSINGHHACKS"
