@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: devopsback
+  name: devopsback:1.0.0-3
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: devopsback
+      app: devopsback:1.0.0-3
   template:
     metadata:
       labels:
-        app: devopsback
+        app: devopsback:1.0.0-3
     spec:
       containers:
-      - name: devopsback
-        image: truthaniket/devopsback:1.0.0-10
+      - name: devopsback:1.0.0-3
+        image: truthaniket/devopsback:1.0.0-3
         ports:
         - containerPort: 5000
 
@@ -30,4 +30,4 @@ spec:
   - port: 8082
     targetPort: 5000
   selector:
-    app: devopsback
+    app: devopsback:1.0.0-3
