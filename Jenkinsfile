@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        APP_NAME = "devopsback"
+        APP_NAME = "devopsfront"
     }
     stages {
         stage('GIT CHECKOUT') {
@@ -24,7 +24,7 @@ pipeline {
                             sh "git add ."
                             sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
                             withCredentials([gitUsernamePassword(credentialsId: 'git', gitToolName: 'Default')]) {
-                                sh "git push https://github.com/AMITSINGHHACKS/manifestfullstack HEAD:backend"
+                                sh "git push https://github.com/AMITSINGHHACKS/manifestfullstack HEAD:main"
                             }
                         }
                     }
